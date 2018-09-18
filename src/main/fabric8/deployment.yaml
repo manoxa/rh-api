@@ -1,0 +1,19 @@
+spec:
+  template:
+    spec:
+      containers:
+      - env:
+        - name: spring_jpa_database
+          value: mysql
+        - name: spring_datasource_url
+          value: jdbc:mysql://mysql/apirhdb?useSSL=false
+        - name: spring_datasource_username
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: MYSQL_USER
+        - name: spring_datasource_password
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: MYSQL_PASSWORD
