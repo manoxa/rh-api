@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -50,6 +51,21 @@ public class FuncionarioResource {
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public void deletar(@PathVariable("id") Long id) {
         funcionarioServie.excluir(id);
+    }
+
+    @RequestMapping(value = "/{nome}", method = RequestMethod.GET)
+    public ResponseEntity<List<Funcionario>> buscarPorNome(@PathVariable("nome") String nome){
+        return ResponseEntity.status(HttpStatus.OK).body(funcionarioServie.buscarPorNome(nome));
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public ResponseEntity<List<Funcionario>> buscarCargoPorId(@PathVariable("id") Long id){
+        return ResponseEntity.status(HttpStatus.OK).body(funcionarioServie.buscarCargoPorId(id));
+    }
+
+    @RequestMapping(value = "/{dataEntrada}/{datasaida}", method = RequestMethod.GET)
+    public ResponseEntity<List<Funcionario>> buscarPorDatas(@PathVariable("dataEntrada") LocalDate entrada, @PathVariable("dataSaida") LocalDate saida){
+        return ResponseEntity.status(HttpStatus.OK).body(funcionarioServie.buscarPorDatas(entrada, saida));
     }
 
 }
