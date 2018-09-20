@@ -16,10 +16,7 @@ Faca o build na aplicacao e o deploy no kubernetes
 
 Test application :
 
-    curl -X GET \
-      http://127.0.0.1:8080/funcionarios \
-      -H 'Accept: application/json' \
-      -H 'Content-Type: application/json'
+    curl -X GET   http://192.168.99.100:31371/funcionarios   -H 'Accept: application/json'   -H 'Content-Type: application/json'
    
 Resposta :
 
