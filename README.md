@@ -10,7 +10,7 @@ Iniciar o mysql no kubernetes
 
 Conectar no banco de dados
 
-    $ kubectl run -it --rm --image=mysql:5.7 --restart=Never mysql-client -- mysql -h root -p marquesdba
+    $ kubectl run -it --rm --image=mysql:5.7 --restart=Never mysql-client -- mysql -h apirhdb -p marquesdba
 
 Faca o build na aplicacao e o deploy no kubernetes
 
