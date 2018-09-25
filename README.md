@@ -2,7 +2,10 @@
 
 API Rest - sistema de administração de recursos humanos
 
-Este projeto foi desenvolvido com spring-boot e mysql publicado no kubernetes atraves do plugin abric8 no maven.
+Este projeto foi desenvolvido com spring-boot, mysql e Kubernetes utilizando o plugin fabric8 no maven.
+Para executar esse projeto e necessario ter o cluster do Kubernetes executando localmente atraves do minikube ou online atraves do Google Cloud Plataform.
+
+Com o seu kubernetes executando siga os passos abaixo para reproduzir o passo a passo.
 
 Iniciar o mysql no kubernetes
     
